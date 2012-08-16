@@ -103,7 +103,7 @@ class Migration(SchemaMigration):
             ('logger', self.gf('django.db.models.fields.CharField')(default='root', max_length=64, db_index=True, blank=True)),
             ('level', self.gf('django.db.models.fields.PositiveIntegerField')(default=40, db_index=True, blank=True)),
             ('message', self.gf('django.db.models.fields.TextField')()),
-            ('culprit', self.gf('django.db.models.fields.CharField')(max_length=200, null=True, db_column='view', blank=True)),
+            ('culprit', self.gf('django.db.models.fields.CharField')(max_length=95, null=True, db_column='view', blank=True)),
             ('checksum', self.gf('django.db.models.fields.CharField')(max_length=32, db_index=True)),
             ('data', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
             ('status', self.gf('django.db.models.fields.PositiveIntegerField')(default=0, db_index=True)),
@@ -121,6 +121,7 @@ class Migration(SchemaMigration):
 
         # Adding unique constraint on 'Group', fields ['project', 'logger', 'culprit', 'checksum']
         db.create_unique('sentry_groupedmessage', ['project_id', 'logger', 'view', 'checksum'])
+        # 
 
         # Adding M2M table for field views on 'Group'
         db.create_table('sentry_groupedmessage_views', (

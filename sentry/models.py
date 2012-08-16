@@ -352,7 +352,7 @@ class MessageBase(Model):
     logger = models.CharField(max_length=64, blank=True, default='root', db_index=True)
     level = models.PositiveIntegerField(choices=settings.LOG_LEVELS, default=logging.ERROR, blank=True, db_index=True)
     message = models.TextField()
-    culprit = models.CharField(max_length=200, blank=True, null=True, db_column='view')
+    culprit = models.CharField(max_length=95, blank=True, null=True, db_column='view')
     checksum = models.CharField(max_length=32, db_index=True)
     data = GzippedDictField(blank=True, null=True)
 
