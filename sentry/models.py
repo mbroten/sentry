@@ -624,7 +624,7 @@ class MessageFilterValue(Model):
     group = models.ForeignKey(Group)
     times_seen = models.PositiveIntegerField(default=0)
     key = models.CharField(choices=FILTER_KEYS, max_length=32)
-    value = models.CharField(max_length=200)
+    value = models.CharField(max_length=159)
     last_seen = models.DateTimeField(default=datetime.now, db_index=True, null=True)
     first_seen = models.DateTimeField(default=datetime.now, db_index=True, null=True)
 

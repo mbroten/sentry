@@ -207,7 +207,7 @@ class Migration(SchemaMigration):
             ('group', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['sentry.Group'])),
             ('times_seen', self.gf('django.db.models.fields.PositiveIntegerField')(default=0)),
             ('key', self.gf('django.db.models.fields.CharField')(max_length=32)),
-            ('value', self.gf('django.db.models.fields.CharField')(max_length=200)),
+            ('value', self.gf('django.db.models.fields.CharField')(max_length=159)),
             ('last_seen', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now, null=True, db_index=True)),
             ('first_seen', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now, null=True, db_index=True)),
         ))
