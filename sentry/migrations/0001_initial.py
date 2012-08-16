@@ -193,7 +193,7 @@ class Migration(SchemaMigration):
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('project', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['sentry.Project'], null=True)),
             ('key', self.gf('django.db.models.fields.CharField')(max_length=32)),
-            ('value', self.gf('django.db.models.fields.CharField')(max_length=200)),
+            ('value', self.gf('django.db.models.fields.CharField')(max_length=159)),
         ))
         db.send_create_signal('sentry', ['FilterValue'])
 

@@ -604,7 +604,7 @@ class FilterValue(Model):
     """
     project = models.ForeignKey(Project, null=True)
     key = models.CharField(choices=FILTER_KEYS, max_length=32)
-    value = models.CharField(max_length=200)
+    value = models.CharField(max_length=159)
 
     objects = BaseManager()
 
